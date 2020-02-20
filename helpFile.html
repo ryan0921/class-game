@@ -42,6 +42,7 @@ var map = [
 var help1 = new Image(); help1.src = "icons8-help-50 (1).png";
 var help2 = new Image(); help2.src = "icons8-help-50.png";
 var helpSc = new Image(); helpSc.src = "helpScreen.png";
+var settingsArrow = new Image(); settingsArrow.src = "arrow.png";
 
 
 var playerX = 200;
@@ -212,7 +213,7 @@ ctx.fillStyle = "rgb(238,238,238)";
 function helpScreen()
 {
 		
-		ctx.drawImage(helpScreen, 0, 0);
+		ctx.drawImage(helpSc, 0, 0);
 	if(pX >= 200 && pX <= 285 && pY >= 525 && pY <= 585 )
 	{
 	ctx.fillStyle = "rgb(238,238,238)";
@@ -227,6 +228,12 @@ function helpScreen()
 		ctx.fillStyle = "rgb(0,0,0)"
 		ctx.font = "50px Arial";
 
+	}
+	ctx.drawImage(settingsArrow, 15, 500);
+	if(pX >= 15 && pX <= 95 && pY >= 500 && pY <= 580 && mouseIsDown)
+	{
+		ctx.clearRect(0,0,800,600);
+		startScreen();
 	}
 
 	
@@ -247,7 +254,7 @@ function howWinScreen()
 	 
 		if(mouseIsDown)
 		{
-			howWin = false;
+			//howWin = false;
 			help = false;
 		}
 	}
@@ -410,7 +417,7 @@ function draw()
 		{
 			
 			helpScreen();
-			if(howWin)
+			//if(howWin)
 			{
 				howWinScreen();
 			}
